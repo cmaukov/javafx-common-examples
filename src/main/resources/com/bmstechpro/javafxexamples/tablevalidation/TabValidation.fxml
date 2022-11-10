@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.WebView?>
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.bmstechpro.javafxexamples.Controller">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.bmstechpro.javafxexamples.tablevalidation.Controller">
     <center>
         <TabPane fx:id="tabPane">
             <tabs>

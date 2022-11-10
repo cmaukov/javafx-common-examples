@@ -1,4 +1,4 @@
-package com.bmstechpro.javafxexamples;
+package com.bmstechpro.javafxexamples.tablevalidation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;

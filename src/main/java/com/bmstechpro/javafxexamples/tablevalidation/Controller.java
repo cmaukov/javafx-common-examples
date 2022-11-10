@@ -1,4 +1,4 @@
-package com.bmstechpro.javafxexamples;
+package com.bmstechpro.javafxexamples.tablevalidation;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.binding.Bindings;
