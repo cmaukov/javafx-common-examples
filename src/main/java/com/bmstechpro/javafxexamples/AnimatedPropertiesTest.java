@@ -33,7 +33,7 @@ public class AnimatedPropertiesTest extends Application {
         final Color startColor = Color.web("#e08090");
         final Color endColor = Color.web("#80e090");
 
-        final ObjectProperty<Color> color = new SimpleObjectProperty<Color>(startColor);
+        final ObjectProperty<Color> color = new SimpleObjectProperty<>(startColor);
 
         // String that represents the color above as a JavaFX CSS function:
         // -fx-body-color: rgb(r, g, b);
@@ -50,12 +50,7 @@ public class AnimatedPropertiesTest extends Application {
                 new KeyFrame(Duration.ZERO, new KeyValue(color, startColor)),
                 new KeyFrame(Duration.seconds(1), new KeyValue(color, endColor)));
 
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                timeline.play();
-            }
-        });
+        button.setOnAction(event -> timeline.play());
 
         // Create a rotating rectangle and set it as the graphic for the button
         final Rectangle rotatingRect = new Rectangle(5, 5, 10, 6);
@@ -73,19 +68,11 @@ public class AnimatedPropertiesTest extends Application {
         button.setGraphic(rectHolder);
 
         // make the rectangle rotate when the mouse hovers over the button
-        button.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                rotate.play();
-            }
-        });
+        button.setOnMouseEntered(event -> rotate.play());
 
-        button.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                rotate.stop();
-                rotatingRect.setRotate(0);
-            }
+        button.setOnMouseExited(event -> {
+            rotate.stop();
+            rotatingRect.setRotate(0);
         });
 
 
