@@ -7,5 +7,6 @@ module com.bmstechpro.javafxexamples {
     opens com.bmstechpro.javafxexamples to javafx.fxml;
     exports com.bmstechpro.javafxexamples;
     exports com.bmstechpro.javafxexamples.tablevalidation;
+    exports com.bmstechpro.javafxexamples.checkers;
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
 }

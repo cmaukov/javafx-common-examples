@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.bmstechpro.javafxexamples'
-    mainClass = 'com.bmstechpro.javafxexamples.HelloApplication'
+    mainClass = 'com.bmstechpro.javafxexamples.checkers.CheckersApp'
 }
 
 javafx {
