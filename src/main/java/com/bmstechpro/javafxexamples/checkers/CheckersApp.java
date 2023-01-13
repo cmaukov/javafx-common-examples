@@ -16,10 +16,10 @@ public class CheckersApp extends Application {
     public static final int WIDTH = 8;
     public static final int HEIGHT = 8;
 
-    private Tile[][] board = new Tile[WIDTH][HEIGHT];
+    private final Tile[][] board = new Tile[WIDTH][HEIGHT];
 
-    private Group tileGroup = new Group();
-    private Group pieceGroup = new Group();
+    private final Group tileGroup = new Group();
+    private final Group pieceGroup = new Group();
 
     private Parent createContent() {
         Pane root = new Pane();
@@ -107,23 +107,20 @@ public class CheckersApp extends Application {
             int y0 = toBoard(piece.getOldY());
 
             switch (result.getType()) {
-                case NONE:
-                    piece.abortMove();
-                    break;
-                case NORMAL:
+                case NONE -> piece.abortMove();
+                case NORMAL -> {
                     piece.move(newX, newY);
                     board[x0][y0].setPiece(null);
                     board[newX][newY].setPiece(piece);
-                    break;
-                case KILL:
+                }
+                case KILL -> {
                     piece.move(newX, newY);
                     board[x0][y0].setPiece(null);
                     board[newX][newY].setPiece(piece);
-
                     Piece otherPiece = result.getPiece();
                     board[toBoard(otherPiece.getOldX())][toBoard(otherPiece.getOldY())].setPiece(null);
                     pieceGroup.getChildren().remove(otherPiece);
-                    break;
+                }
             }
         });
 

@@ -8,5 +8,8 @@ module com.bmstechpro.javafxexamples {
     exports com.bmstechpro.javafxexamples;
     exports com.bmstechpro.javafxexamples.tablevalidation;
     exports com.bmstechpro.javafxexamples.checkers;
+    exports com.bmstechpro.javafxexamples.shapes.animations;
+
+
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
 }

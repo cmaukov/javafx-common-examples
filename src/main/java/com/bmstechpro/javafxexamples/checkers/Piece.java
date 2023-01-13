@@ -11,7 +11,7 @@ import javafx.scene.shape.Ellipse;
 import static com.bmstechpro.javafxexamples.checkers.CheckersApp.TILE_SIZE;
 
 public class Piece extends StackPane {
-    private PieceType type;
+    private final PieceType type;
 
     private double mouseX, mouseY;
     private double oldX, oldY;

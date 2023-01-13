@@ -5,13 +5,13 @@ package com.bmstechpro.javafxexamples.checkers;
  */
 
 public class MoveResult {
-    private MoveType type;
+    private final MoveType type;
 
     public MoveType getType() {
         return type;
     }
 
-    private Piece piece;
+    private final Piece piece;
 
     public Piece getPiece() {
         return piece;
