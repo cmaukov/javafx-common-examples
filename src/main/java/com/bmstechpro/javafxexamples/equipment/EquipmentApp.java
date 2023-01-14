@@ -5,17 +5,21 @@ package com.bmstechpro.javafxexamples.equipment;
  */
 
 import javafx.application.Application;
+import javafx.beans.InvalidationListener;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +41,7 @@ public class EquipmentApp extends Application {
         this.stage = stage;
         stage.setScene(new Scene(createContent()));
         stage.setWidth(800);
-        stage.setHeight(800);
+        stage.setHeight(1000);
         stage.show();
     }
 
@@ -46,7 +50,7 @@ public class EquipmentApp extends Application {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         TextArea textArea = new TextArea();
-        textArea.setPrefSize(600, 400);
+        textArea.setPrefSize(800, 200);
 
         Button loadFileBtn = new Button("Load File");
         loadFileBtn.setOnAction(event -> {
@@ -72,7 +76,30 @@ public class EquipmentApp extends Application {
 
         hBox.getChildren().addAll(loadFileBtn, parseText);
 
-        vBox.getChildren().addAll(hBox, textArea);
+        TableView<Equipment> tableView = new TableView<>();
+        tableView.setItems(equipmentList);
+
+        TableColumn<Equipment,String > tagColumn = new TableColumn<>("Tag");
+        tagColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().tag()));
+        TableColumn<Equipment,String> modelColumn = new TableColumn<>("Model");
+        modelColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().modelNumber()));
+        tableView.getColumns().add(tagColumn);
+        tableView.getColumns().add(modelColumn);
+        TextArea textArea1 = new TextArea();
+        textArea1.setPrefSize(800,300);
+        textArea1.setEditable(false);
+
+        tableView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                textArea1.clear();
+
+                textArea1.appendText(String.format("Tag: %s\tModel Number: %s",newValue.tag(),newValue.modelNumber()));
+
+            }
+        });
+//        textArea1.textProperty().bind(tableView.getSelectionModel().selectedItemProperty().asString());
+
+        vBox.getChildren().addAll(hBox, textArea,tableView,textArea1);
         pane.getChildren().add(vBox);
         return pane;
     }
@@ -96,6 +123,10 @@ public class EquipmentApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private char[] toCharArray(String s){
+       return s.toCharArray();
     }
 
 
