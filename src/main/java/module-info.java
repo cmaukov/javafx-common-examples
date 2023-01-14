@@ -6,7 +6,6 @@ module com.bmstechpro.javafxexamples {
     requires javafx.swing;
 
 
-
     exports com.bmstechpro.javafxexamples;
     exports com.bmstechpro.javafxexamples.tablevalidation;
     exports com.bmstechpro.javafxexamples.checkers;
@@ -15,6 +14,7 @@ module com.bmstechpro.javafxexamples {
     exports com.bmstechpro.javafxexamples.reflect;
     exports com.bmstechpro.javafxexamples.tictactoe;
     exports com.bmstechpro.javafxexamples.equipment;
+    exports com.bmstechpro.javafxexamples.minesweeper;
 
 
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
