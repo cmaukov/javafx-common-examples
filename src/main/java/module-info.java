@@ -2,14 +2,21 @@ module com.bmstechpro.javafxexamples {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
+    requires java.desktop;
+    requires javafx.swing;
 
 
-    opens com.bmstechpro.javafxexamples to javafx.fxml;
+
     exports com.bmstechpro.javafxexamples;
     exports com.bmstechpro.javafxexamples.tablevalidation;
     exports com.bmstechpro.javafxexamples.checkers;
     exports com.bmstechpro.javafxexamples.shapes.animations;
+    exports com.bmstechpro.javafxexamples.parametrics;
+    exports com.bmstechpro.javafxexamples.reflect;
+    exports com.bmstechpro.javafxexamples.tictactoe;
+    exports com.bmstechpro.javafxexamples.equipment;
 
 
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
+    opens com.bmstechpro.javafxexamples to javafx.fxml;
 }
