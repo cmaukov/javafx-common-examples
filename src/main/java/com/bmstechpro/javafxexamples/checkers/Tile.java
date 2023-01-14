@@ -23,6 +23,7 @@ public class Tile extends Rectangle {
     }
 
     public Tile(boolean light, int x, int y) {
+
         setWidth(CheckersApp.TILE_SIZE);
         setHeight(CheckersApp.TILE_SIZE);
 
