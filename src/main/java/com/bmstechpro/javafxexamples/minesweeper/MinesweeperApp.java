@@ -27,6 +27,7 @@ public class MinesweeperApp extends Application {
     private static final int Y_TILES = H / TILE_SIZE;
 
     private final Tile[][] grid = new Tile[X_TILES][Y_TILES];
+    List<Tile> tiles = new ArrayList<>();
     private Scene scene;
 
     private Parent createContent() {
@@ -36,9 +37,18 @@ public class MinesweeperApp extends Application {
             for (int x = 0; x < X_TILES; x++) {
                 Tile tile = new Tile(x, y, Math.random() < 0.2);
                 grid[x][y] = tile;
+                tiles.add(tile);
                 root.getChildren().add(tile);
             }
         }
+
+//        tiles.forEach(t->{
+//            if(!t.hasBomb){
+//                long bombs = getNeighbors(t).stream().filter(t1 -> t1.hasBomb).count();
+//                if (bombs > 0)
+//                    t.text.setText(String.valueOf(bombs));
+//            }
+//        });
         for (int y = 0; y < Y_TILES; y++) {
             for (int x = 0; x < X_TILES; x++) {
                 Tile tile = grid[x][y];
@@ -115,9 +125,9 @@ public class MinesweeperApp extends Application {
             this.hasBomb = hasBomb;
 
             border.setStroke(Color.LIGHTGRAY);
+//            text.setFill(Color.WHITE);
             text.setFont(Font.font(18));
             text.setText(hasBomb ? "X" : "");
-            text.setVisible(false);
             getChildren().addAll(border, text);
             setTranslateX(x * TILE_SIZE);
             setTranslateY(y * TILE_SIZE);
@@ -128,7 +138,10 @@ public class MinesweeperApp extends Application {
             if(isOpen)return;
             if(hasBomb){
                 System.out.println("Game Over");
-                scene.setRoot(createContent());
+                tiles.forEach(t->t.border.setFill(null));
+
+
+//                scene.setRoot(createContent());
                 return;
             }
             isOpen = true;
