@@ -16,6 +16,7 @@ module com.bmstechpro.javafxexamples {
     exports com.bmstechpro.javafxexamples.equipment;
     exports com.bmstechpro.javafxexamples.minesweeper;
     exports com.bmstechpro.javafxexamples.connect4;
+    exports com.bmstechpro.javafxexamples.encryption;
 
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
     opens com.bmstechpro.javafxexamples to javafx.fxml;

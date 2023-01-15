@@ -97,7 +97,7 @@ public class Connect4App extends Application {
     private void placeDisc(Disc disc, int column) {
         int row = ROWS - 1;
         do {
-            if (!getDisc(column, row).isPresent())
+            if (getDisc(column, row).isEmpty())
                 break;
 
             row--;
