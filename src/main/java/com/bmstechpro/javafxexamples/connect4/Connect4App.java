@@ -6,7 +6,6 @@ package com.bmstechpro.javafxexamples.connect4;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.effect.Light;
@@ -183,6 +182,7 @@ public class Connect4App extends Application {
 
     private static class Disc extends Circle {
         private final boolean red;
+
         public Disc(boolean red) {
             super(TILE_SIZE / 2, red ? Color.RED : Color.YELLOW);
             this.red = red;
