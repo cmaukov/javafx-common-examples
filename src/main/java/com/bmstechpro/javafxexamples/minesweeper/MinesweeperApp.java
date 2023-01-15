@@ -104,7 +104,6 @@ public class MinesweeperApp extends Application {
     private  class Tile extends StackPane {
         private final int x, y;
         private final boolean hasBomb;
-        private int bombs = 0;
         private final Rectangle border = new Rectangle(TILE_SIZE - 2, TILE_SIZE - 2);
         private final Text text = new Text();
         private boolean isOpen = false;
