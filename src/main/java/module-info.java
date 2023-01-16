@@ -19,6 +19,8 @@ module com.bmstechpro.javafxexamples {
     exports com.bmstechpro.javafxexamples.encryption;
     exports com.bmstechpro.javafxexamples.wwz;
     exports com.bmstechpro.javafxexamples.button;
+    exports com.bmstechpro.javafxexamples.pooltime;
+
 
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
     opens com.bmstechpro.javafxexamples to javafx.fxml;

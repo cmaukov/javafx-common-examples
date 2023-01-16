@@ -27,7 +27,10 @@ public class ButtonApp extends Application {
         button.setFont(Font.font(22));
         // textField validation
         button.disableProperty().bind(Bindings.createBooleanBinding(() -> !isValid(textField.getText()), textField.textProperty()));
-// button animation if textField text value is equal to "hello"
+
+
+        // button animation if textField text value is equal to "hello"
+
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.equals("hello")) animate(button);
         });
@@ -49,7 +52,7 @@ public class ButtonApp extends Application {
         st.setToX(0);
         st.setToY(0);
         st.setAutoReverse(true);
-        st.setCycleCount(2);
+        st.setCycleCount(4);
         st.play();
 
     }
