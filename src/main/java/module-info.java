@@ -20,6 +20,7 @@ module com.bmstechpro.javafxexamples {
     exports com.bmstechpro.javafxexamples.wwz;
     exports com.bmstechpro.javafxexamples.button;
     exports com.bmstechpro.javafxexamples.pooltime;
+    exports com.bmstechpro.javafxexamples.pooltime.conv;
 
 
     opens com.bmstechpro.javafxexamples.tablevalidation to javafx.fxml;
