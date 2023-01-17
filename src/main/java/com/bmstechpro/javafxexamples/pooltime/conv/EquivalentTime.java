@@ -92,6 +92,10 @@ public class EquivalentTime {
         return convertedTime;
     }
 
+    public double getConvertedTime() {
+        return convertedTime;
+    }
+
     public String convTimeToString() {
 
         int iPart = (int) convertedTime;
