@@ -91,15 +91,26 @@ public class EquivalentTime {
         }
         return convertedTime;
     }
+
+    public String convTimeToString() {
+
+        int iPart = (int) convertedTime;
+        int min = iPart / 60;
+        int sec = iPart - min * 60;
+        var ms = Math.round((convertedTime - iPart) * 100);
+
+        return "Converted Time: " + min + ":" + sec + ":" + ms;
+
+    }
+
     @Override
     public String toString() {
-        return String.format("SwimTimeConverter\nEvent: %s\nFrom: %s\nTo: %s\n%s" +
-                        "\nConverted Time: %.2f",
+        return String.format("SwimTimeConverter\nEvent: %s\nFrom: %s\nTo: %s\nSwim time: %.2f\n%s",
                 swimStyle.getDisplayName(),
                 fromCourse.getDisplayName(),
                 toCourse.getDisplayName(),
                 swimTime,
-                convertedTime);
+                convTimeToString());
 
 
     }
