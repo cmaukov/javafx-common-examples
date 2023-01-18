@@ -4,7 +4,7 @@ package com.bmstechpro.javafxexamples.pooltime.conv;
  * @author Konstantin Staykov
  */
 
-public enum PoolCourse {
+public enum PoolCourse implements HasDisplayName {
     LONG_COURSE_METERS("Long Course Meters"),
     SHORT_COURSE_YARDS("Short Course Yards"),
     SHORT_COURSE_METERS("Short Course Meters");

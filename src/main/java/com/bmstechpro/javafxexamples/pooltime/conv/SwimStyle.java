@@ -4,7 +4,7 @@ package com.bmstechpro.javafxexamples.pooltime.conv;
  * @author Konstantin Staykov
  */
 
-public enum SwimStyle {
+public enum SwimStyle implements HasDisplayName {
     FREESTYLE("Freestyle",0.8),
     BACKSTROKE("Backstroke",0.6),
     BUTTERFLY("Butterfly",0.7),
